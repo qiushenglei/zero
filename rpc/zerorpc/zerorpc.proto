@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package zerorpc;
+option go_package="./zerorpc";
+
+message Request {
+  string ping = 1;
+}
+
+message Response {
+  string pong = 1;
+}
+
+service Zerorpc {
+  rpc Ping(Request) returns(Response);
+}
